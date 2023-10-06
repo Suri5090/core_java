@@ -26,7 +26,6 @@ public class ArrayListDemo {
 				 itr.remove(); 
 			 } 
 		 }
-		 
 		 System.out.println(al);
 	}
 }

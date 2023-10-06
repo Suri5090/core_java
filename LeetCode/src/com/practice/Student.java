@@ -16,12 +16,6 @@ public class Student implements Serializable, Cloneable{
 		this.id = id;
 		this.name = name;
 	}
-		
-	public Student() {
-	}
-
-	public Student(int id, String string, Address homeAdd) {
-	}
 
 	@Override
 	public String toString() {

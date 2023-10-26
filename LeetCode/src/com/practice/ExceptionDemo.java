@@ -2,17 +2,21 @@ package com.practice;
 
 public class ExceptionDemo{
 
-	public static void main(String args[]) throws InterruptedException {
+	public static void main(String args[]) {
 	
 		ExceptionDemo demo = new ExceptionDemo();
 		demo.doStuff();
 	}
 	
-	public void doStuff() throws InterruptedException{
+	public void doStuff(){
 		doMoreStuff();
 	}
 	
-	public void doMoreStuff() throws InterruptedException {
-		Thread.sleep(5000);
+	public void doMoreStuff() {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

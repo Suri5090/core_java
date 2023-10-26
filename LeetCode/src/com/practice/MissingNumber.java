@@ -4,17 +4,20 @@ public class MissingNumber {
 
 	public static void main(String[] args) {
 		
-		int arr[] = {1, 2, 4, 6, 3, 7, 8};
-		
-		int n = arr.length + 1;
-		
-		int totalSum = n*(n+1)/2;
-		
-		int currentSum = 0;
-		
-		for(int value : arr) {
-			currentSum+=value;
+		int arr[] = {4, 2, 1, 6, 3, 7, 8};
+
+		int miss = findMissingNumber(arr, arr.length+1);
+
+		System.out.println("Missing number: "+ miss);
+	}
+
+	private static int findMissingNumber(int[] arr, int n) {
+
+		int total= 1;
+		for(int i=2; i<=arr.length+1; i++){
+			total = total + i;
+			total = total - arr[i-2];
 		}
-		System.out.println("Missing number: "+ (totalSum-currentSum));
+		return total;
 	}
 }

@@ -20,7 +20,6 @@ public class StreamDistinct {
 		}
 		
 		List<Character> uniqueList = list.stream().distinct().collect(Collectors.toList());
-		
 		uniqueList.forEach(System.out::print);
 	}
 }

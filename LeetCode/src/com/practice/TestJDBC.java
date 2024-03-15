@@ -2,7 +2,7 @@ package com.practice;
 
 import java.sql.*;  
 public class TestJDBC{  
-    public static void main(String args[]){  
+    public static void main(String[] args){
     	try{  
     		Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("Loaded Driver");
@@ -13,7 +13,7 @@ public class TestJDBC{
 			System.out.println("Connection Closed");
     	}
     	catch(Exception e){
-    		System.out.println(e);
+    		System.out.println(e.getMessage());
     	}
     }  
 }

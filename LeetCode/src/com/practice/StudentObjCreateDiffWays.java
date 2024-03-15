@@ -21,26 +21,17 @@ public class StudentObjCreateDiffWays
 		System.out.println();
 		
 		System.out.println("Using newInstanceMethod of class");
-		Student stud1 = Student.class.newInstance();
-		stud1.id = 102;
+		Student stud1 = Student.class.getDeclaredConstructor(int.class, String.class).newInstance(102, "Ramesh");
 		System.out.println(stud1.id);
 		System.out.println();
 		
 		System.out.println("Using newInstanceMethod of class");
-		Student stud2 = (Student) Class.forName("com.practice.Student").newInstance();
-		stud2.id = 103;
+		Student stud2 = (Student) Class.forName("com.practice.Student").getDeclaredConstructor(int.class, String.class).newInstance(103, "Rajesh");
 		System.out.println(stud2.id);
 		System.out.println();
-		
-		System.out.println("Using newInstanceMethod of Constructor");
-		Constructor<Student> constr = Student.class.getConstructor();
-		Student stud3 =	constr.newInstance();
-		stud3.id = 104;
-		System.out.println(stud3.id);
-		System.out.println();
-		
+
 		System.out.println("Using Clone method");
-		Student stud4 = (Student) stud3.clone();
+		Student stud4 = (Student) stud2.clone();
 		System.out.println(stud4.id);
 		System.out.println();
 		
@@ -48,7 +39,8 @@ public class StudentObjCreateDiffWays
 		
 		FileOutputStream fos = new FileOutputStream("text.txt"); 
 		ObjectOutputStream oos = new ObjectOutputStream(fos); 
-		oos.writeObject(stud3); oos.close();
+		oos.writeObject(stud2);
+		oos.close();
 		
 		System.out.println("Using De-Serialization");
 		FileInputStream fis = new FileInputStream("text.txt");

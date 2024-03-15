@@ -18,7 +18,7 @@ public class ProductExceptSelf {
             left *= nums[i];
         }
 
-        for(int i=nums.length-1, right=1; i>=0; i--){
+        for(int i=n-1, right=1; i>=0; i--){
             ans[i] *= right;
             right *= nums[i];
         }

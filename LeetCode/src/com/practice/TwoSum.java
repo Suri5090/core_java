@@ -1,8 +1,8 @@
-package com.Interview;
+package com.practice;
 
 import java.util.*;
 
-public class Test {
+public class TwoSum {
     public static void main(String[] args) {
         int[] nums = {3, 2, 4};
         int target = 7;

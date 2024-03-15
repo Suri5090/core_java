@@ -9,7 +9,7 @@ public class CamelToSnake {
 
     public static String camelToSnake(String str) {
         StringBuilder sb = new StringBuilder();
-        //TODO Write code here
+
         char[] ch = str.toCharArray();
         for(char c: ch){
             if(Character.isUpperCase(c)){

@@ -3,7 +3,6 @@
 package com.practice;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -12,7 +11,7 @@ public class CountDuplElements {
 
 	public static void main(String[] args) {
 		
-		String str = "suresh is good boy and suresh tallent boy suresh tallent and good boy";
+		String str = "suresh is good boy and suresh talent boy suresh talent and good boy";
 		
 		String[] substr = str.split(" ");
 		
@@ -41,31 +40,23 @@ public class CountDuplElements {
 		}
 		*/
 		
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		
-		for(int j=0; j<substr.length; j++) {
-			
-			String sub = substr[j];
-			
-			if(map.containsKey(sub)) {
-				map.put(sub, map.get(sub)+1);
-			}
-			else {
-				map.put(sub, 1);
-			}
-		}
+		Map<String, Integer> map = new HashMap<>();
+
+        for (String sub : substr) {
+
+            if (map.containsKey(sub)) {
+                map.put(sub, map.get(sub) + 1);
+            } else {
+                map.put(sub, 1);
+            }
+        }
 		
 		//System.out.println(map);
 		
 		Set<Entry<String, Integer>> set = map.entrySet();
-		
-		Iterator<Entry<String, Integer>> itr = set.iterator();
-		
-		while(itr.hasNext()) 
-		{
-			Entry<String, Integer> strentry = itr.next();
-			System.out.println(strentry.getKey()+": "+strentry.getValue()+" times");
-		}
-		
+
+        for (Entry<String, Integer> entry : set) {
+            System.out.println(entry.getKey() + ": " + entry.getValue() + " times");
+        }
 	}
 }

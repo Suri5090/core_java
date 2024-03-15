@@ -7,7 +7,7 @@ public class SecondHighestNum {
 
 	public static void main(String[] args) {
 		
-		Integer arr[] = {6, 12, 23, 14, 19, 13, 17};
+		Integer[] arr = {6, 12, 23, 14, 19, 13, 17};
 		
 		List<Integer> arrList = Arrays.asList(arr);
 		
@@ -26,9 +26,9 @@ public class SecondHighestNum {
 	private static int getSecondLargest(Integer[] arr) 
 	{
 		int high = 0, high2 = 0;
-		
-		for(int i=0; i<arr.length; i++) {
-			
+
+		for(int i:arr) {
+
 			if(arr[i] > high)
 			{
 				high2 = high;

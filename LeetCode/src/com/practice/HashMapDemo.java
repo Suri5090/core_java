@@ -24,13 +24,12 @@ public class HashMapDemo extends Thread {
 		hm.put(2, "Ramesh");
 		hm.put(3, "Naresh");
 				
-		HashMapDemo t=new HashMapDemo();
+		HashMapDemo t = new HashMapDemo();
 		
 		t.start();
 				
 		for(Object o: hm.entrySet()) {
-			Object s = o;
-			System.out.println(s);
+			System.out.println(o);
 			Thread.sleep(1000);
 		}
 		System.out.println(hm);

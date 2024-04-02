@@ -22,12 +22,12 @@ public class ComparatorDemo {
 		//sortProduct.stream().forEach(p -> System.out.println(p.id +" "+ p.name +" "+ p.price));
 		
 		
-		Collections.sort(prodList, (p1, p2) -> 
-		{ 
-			return p1.name.compareTo(p2.name);
-		});
+		prodList.sort((p1, p2) ->
+        {
+            return p1.name.compareTo(p2.name);
+        });
 		 
-		prodList.stream().forEach(p -> System.out.println(p.id +" "+ p.name +" "+ p.price));
+		prodList.forEach(p -> System.out.println(p.id +" "+ p.name +" "+ p.price));
 		
 		System.out.println();
 		System.out.println("Products having less than 20000 price");

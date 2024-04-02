@@ -16,11 +16,12 @@ public class DupElements {
 		
 		System.out.println(duplicateElements);
 				
-		arrList.stream()
+		Map<Integer, Long> map = arrList.stream()
 				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 				.entrySet()
 				.stream()
 				.filter(e -> e.getValue() > 1)
-				.forEach(System.out::println);
+				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+		System.out.println(map);
 	}
 }

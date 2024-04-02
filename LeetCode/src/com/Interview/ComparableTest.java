@@ -1,8 +1,7 @@
 package com.Interview;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+//import java.util.Collections;
 import java.util.List;
 
 public class ComparableTest {
@@ -15,6 +14,10 @@ public class ComparableTest {
         products.add(new Product(2, "Shirt"));
         products.add(new Product(1, "Belt"));
 
+        //Natural Sorting Order - Comparable Interface
+        //Collections.sort(products);
+
+        //Comparator Interface
         products.sort(new Product());
         products.forEach(System.out::println);
     }

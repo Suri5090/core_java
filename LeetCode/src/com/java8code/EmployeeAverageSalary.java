@@ -28,9 +28,10 @@ public class EmployeeAverageSalary {
 		// select Designation, max(salary) from employee group by designation;
 		Map<String, Double> maxSalary = empList.stream().collect(Collectors.groupingBy(Employee::getDesignation,
 												Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)),
-															emp -> emp.orElse(null).getSalary())));
+															emp -> emp.map(Employee::getSalary).orElse(null))));
 
 		maxSalary.forEach((k,v) -> System.out.println(k +" -> "+ v));
+		System.out.println();
 
 		//select Designation, gender, avg(salary) from employee group by designation, gender;
 		Map<String, Map<String, Double>> avgSalaryByDesGender = empList.stream().collect(Collectors.groupingBy(Employee::getDesignation, 

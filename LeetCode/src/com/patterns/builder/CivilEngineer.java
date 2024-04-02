@@ -1,7 +1,7 @@
 package com.patterns.builder;
 
 public class CivilEngineer {
-    private HouseBuilder houseBuilder;
+    private final HouseBuilder houseBuilder;
 
     public CivilEngineer(HouseBuilder houseBuilder)
     {

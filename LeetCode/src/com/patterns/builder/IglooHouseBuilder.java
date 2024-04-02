@@ -2,7 +2,7 @@ package com.patterns.builder;
 
 public class IglooHouseBuilder implements HouseBuilder {
 
-    private House house;
+    private final House house;
 
     public IglooHouseBuilder(){
         this.house = new House();

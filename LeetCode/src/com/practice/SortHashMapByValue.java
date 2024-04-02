@@ -9,7 +9,7 @@ public class SortHashMapByValue {
 
 	public static void main(String[] args) {
 		
-		Map<String, Integer> map = new LinkedHashMap<String, Integer>();
+		Map<String, Integer> map = new LinkedHashMap<>();
 		
 		map.put("suresh", 6);
 		map.put("reddy", 5);

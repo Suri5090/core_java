@@ -10,16 +10,14 @@ public class Student implements Serializable, Cloneable{
 	private static final long serialVersionUID = 1L;
 	
 	public int id;
-	public String name;
-	
-	public Student(int id, String name) {
-		this.id = id;
-		this.name = name;
+
+	Student(){
+		System.out.println("Student Constructor call");
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + "]";
+		return "Student [id=" + id + "]";
 	}
 	
 	@Override

@@ -1,10 +1,21 @@
 package com.Interview;
 
+import java.util.Arrays;
+
 public class Test {
 
     public static void main(String[] args) {
-        String str = "hello suresh";
-        Character ch = str.chars().mapToObj(c -> (char)c).filter(c -> str.indexOf(c) == str.lastIndexOf(c)).findFirst().get();
-        System.out.println(ch);
+
+        int[] arr = {17, -12, 11, -13, -5, 6, -7, 5, -3, -6};
+        int swap=0;
+        for(int i=0; i<arr.length-1; i++){
+            if(arr[i]>0 && arr[i+1]<0){
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                i=0;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
     }
 }
